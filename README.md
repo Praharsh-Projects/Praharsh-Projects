@@ -26,15 +26,15 @@ I build digital twin simulations, retrieval-grounded decision support systems, a
 - Retrieval-grounded AI systems with citations and policy-aligned outputs.
 - Production engineering: observability, documentation, deployment reliability.
 
-## Featured Repositories
-| Repository | What It Covers | Stack |
-|---|---|---|
-| [Eagle_Eye](https://github.com/Praharsh-Projects/Eagle_Eye) | Core applied AI/simulation work and supporting tooling | Python, Streamlit, Docker |
-| [restaurant_backend](https://github.com/Praharsh-Projects/restaurant_backend) | Restaurant platform backend APIs (auth, products, cart, orders) | Node.js, Express, MongoDB |
-| [restaurant_frontend](https://github.com/Praharsh-Projects/restaurant_frontend) | Restaurant ordering frontend with user and restaurant flows | React, Redux, Bootstrap |
-| [WhatBytes-assignment](https://github.com/Praharsh-Projects/WhatBytes-assignment) | E-commerce UI with filtering, product views, and cart | React, Vite, Redux Toolkit |
-| [XNL-Task](https://github.com/Praharsh-Projects/XNL-Task) | Cross-platform banking-style Flutter app UI | Flutter, Dart |
-| [Calendar-Task](https://github.com/Praharsh-Projects/Calendar-Task) | Responsive calendar UI with event scheduling views | React, JavaScript |
+## Featured Work
+| Work | Repository / Artifact | What It Covers | Stack |
+|---|---|---|---|
+| SecPurityAI - Cybersecurity Analytics Platform | [SecPurity](https://github.com/Praharsh-Projects/SecPurity) | Multi-store cybersecurity analytics with CVE intelligence, threat-log ingestion, semantic/vector search, and graph scoring. | FastAPI, PostgreSQL, MinIO, Qdrant, Neo4j |
+| Eagle Eye - AI Assistant for Baltic Port Operations | [Eagle_Eye](https://github.com/Praharsh-Projects/Eagle_Eye) | AIS pipeline, congestion analytics, forecasting, and retrieval-grounded assistant for operational queries. | Python, FastAPI, LangChain, FAISS, Docker |
+| Smart Decision Support System for Port Cybersecurity | [SDSS-Port-Management](https://github.com/Praharsh-Projects/SDSS-Port-Management) | Port cybersecurity risk assessment with API + dashboard workflows and AIS-integrated analysis. | Python, Flask, ML, CesiumJS |
+| Intelligent Intrusion Detection System Using Deep Learning | [IDS-PRoject](https://github.com/Praharsh-Projects/IDS-PRoject) | Hybrid intrusion detection using ML/DL models with practical workflow tooling. | Python, SVM, Random Forest, DNN, Tkinter |
+| Dark Web Data Collection Benchmark using DARC | [RM REPORT.pdf](https://github.com/Praharsh-Projects/Researh_papers/blob/main/RM%20REPORT.pdf) | Benchmark study comparing DARC with other crawlers across speed, completeness, anonymity, and resilience. | Cybersecurity Research, Benchmarking |
+| Maintainability Analysis of Apache RocketMQ using GQM | [SM_PROJECT (2).pdf](https://github.com/Praharsh-Projects/Researh_papers/blob/main/SM_PROJECT%20(2).pdf) | Maintainability analysis across RocketMQ versions using Goal-Question-Metric and OO metrics. | Software Metrics, GQM, Code Analysis |
 
 ## Tech Stack
 <p>
