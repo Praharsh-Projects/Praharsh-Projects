@@ -1,0 +1,52 @@
+@page "/go-live"
+@using Microsoft.EntityFrameworkCore
+@inject IDbContextFactory<WmsDbContext> DbFactory
+
+<PageTitle>Go-Live Readiness</PageTitle>
+
+<h1>Go-Live Readiness</h1>
+<p class="lead">Acceptance criteria, owner tracking, and readiness scoring for warehouse software deployment support.</p>
+
+<section class="kpi-grid">
+    <div class="kpi-card">
+        <span>Readiness score</span>
+        <strong>@readinessScore%</strong>
+        <small>@items.Count item(s) tracked</small>
+    </div>
+</section>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Area</th>
+            <th>Requirement</th>
+            <th>Status</th>
+            <th>Owner</th>
+            <th>Target UTC</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in items)
+        {
+            <tr>
+                <td>@item.Area</td>
+                <td>@item.Requirement</td>
+                <td><span class="status-pill">@item.Status</span></td>
+                <td>@item.Owner</td>
+                <td>@item.TargetUtc.ToString("yyyy-MM-dd HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<GoLiveReadinessItem> items = [];
+    private decimal readinessScore;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await using var db = await DbFactory.CreateDbContextAsync();
+        items = await db.GoLiveReadinessItems.AsNoTracking().OrderBy(item => item.TargetUtc).ToListAsync();
+        readinessScore = GoLiveReadinessEvaluator.CalculateScore(items);
+    }
+}

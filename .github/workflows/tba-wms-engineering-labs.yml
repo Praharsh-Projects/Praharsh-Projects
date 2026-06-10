@@ -1,0 +1,29 @@
+name: TBA WMS Engineering Labs
+
+on:
+  push:
+    paths:
+      - "tba-wms-engineering-labs/**"
+      - ".github/workflows/tba-wms-engineering-labs.yml"
+  pull_request:
+    paths:
+      - "tba-wms-engineering-labs/**"
+      - ".github/workflows/tba-wms-engineering-labs.yml"
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: tba-wms-engineering-labs
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Restore
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --configuration Release --no-build

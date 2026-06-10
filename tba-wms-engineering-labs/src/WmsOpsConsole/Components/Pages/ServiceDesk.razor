@@ -1,0 +1,47 @@
+@page "/service-desk"
+@using Microsoft.EntityFrameworkCore
+@inject IDbContextFactory<WmsDbContext> DbFactory
+@inject ServiceDeskTriageService TriageService
+
+<PageTitle>Service Desk</PageTitle>
+
+<h1>Service Desk</h1>
+<p class="lead">Ticket triage view for warehouse software support, root-cause notes, and next actions.</p>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Ticket</th>
+            <th>Summary</th>
+            <th>Area</th>
+            <th>Current</th>
+            <th>Recommended</th>
+            <th>Status</th>
+            <th>Next action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in tickets)
+        {
+            <tr>
+                <td>@ticket.TicketNumber</td>
+                <td>@ticket.Summary</td>
+                <td>@ticket.SystemArea</td>
+                <td>@ticket.Priority</td>
+                <td><strong>@TriageService.RecommendPriority(ticket, DateTime.UtcNow)</strong></td>
+                <td>@ticket.Status</td>
+                <td>@ticket.NextAction</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<ServiceDeskTicket> tickets = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        await using var db = await DbFactory.CreateDbContextAsync();
+        tickets = await db.ServiceDeskTickets.AsNoTracking().OrderByDescending(ticket => ticket.Priority).ToListAsync();
+    }
+}

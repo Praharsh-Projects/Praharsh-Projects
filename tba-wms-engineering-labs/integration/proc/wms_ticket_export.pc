@@ -1,0 +1,46 @@
+/*
+ * Illustrative Pro*C-style adapter for exporting open WMS service tickets.
+ * This file is not compiled in the .NET demo. It requires Oracle Pro*C tooling,
+ * Oracle client libraries, and an actual Oracle schema matching database/oracle.
+ */
+
+#include <stdio.h>
+#include <string.h>
+
+EXEC SQL INCLUDE sqlca;
+
+int main(void)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+        char username[64] = "wms_user";
+        char password[64] = "change_me";
+        char ticket_number[41];
+        char summary[301];
+        char priority_code[21];
+    EXEC SQL END DECLARE SECTION;
+
+    EXEC SQL CONNECT :username IDENTIFIED BY :password;
+
+    EXEC SQL DECLARE ticket_cursor CURSOR FOR
+        SELECT ticket_number, summary, priority_code
+          FROM wms_service_ticket
+         WHERE status_code <> 'Resolved'
+         ORDER BY opened_utc;
+
+    EXEC SQL OPEN ticket_cursor;
+
+    for (;;)
+    {
+        EXEC SQL FETCH ticket_cursor INTO :ticket_number, :summary, :priority_code;
+        if (sqlca.sqlcode != 0)
+        {
+            break;
+        }
+
+        printf("%s,%s,%s\n", ticket_number, priority_code, summary);
+    }
+
+    EXEC SQL CLOSE ticket_cursor;
+    EXEC SQL COMMIT RELEASE;
+    return 0;
+}

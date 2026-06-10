@@ -1,0 +1,103 @@
+@page "/operations"
+@using Microsoft.EntityFrameworkCore
+@inject IDbContextFactory<WmsDbContext> DbFactory
+
+<PageTitle>Operations</PageTitle>
+
+<h1>Operations</h1>
+<p class="lead">Inventory, work-order, and pick-task views for warehouse support conversations.</p>
+
+<h2>Inventory Risk</h2>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>SKU</th>
+            <th>Description</th>
+            <th>Zone</th>
+            <th>Available</th>
+            <th>Reorder point</th>
+            <th>Risk</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in inventory)
+        {
+            <tr>
+                <td>@item.Sku</td>
+                <td>@item.Description</td>
+                <td>@item.Zone</td>
+                <td>@item.Available</td>
+                <td>@item.ReorderPoint</td>
+                <td><span class="status-pill">@item.Risk</span></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Work Orders</h2>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Order</th>
+            <th>Customer</th>
+            <th>Area</th>
+            <th>Status</th>
+            <th>Due UTC</th>
+            <th>Acceptance criteria</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in workOrders)
+        {
+            <tr>
+                <td>@order.OrderNumber</td>
+                <td>@order.Customer</td>
+                <td>@order.Area</td>
+                <td><span class="status-pill">@order.Status</span></td>
+                <td>@order.DueUtc.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@order.AcceptanceCriteria</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Pick Tasks</h2>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>SKU</th>
+            <th>Picker</th>
+            <th>Qty</th>
+            <th>Status</th>
+            <th>Released UTC</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in pickTasks)
+        {
+            <tr>
+                <td>@task.TaskNumber</td>
+                <td>@task.Sku</td>
+                <td>@task.Picker</td>
+                <td>@task.Quantity</td>
+                <td><span class="status-pill">@task.Status</span></td>
+                <td>@task.ReleasedUtc.ToString("yyyy-MM-dd HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<InventoryItem> inventory = [];
+    private List<WorkOrder> workOrders = [];
+    private List<PickTask> pickTasks = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        await using var db = await DbFactory.CreateDbContextAsync();
+        inventory = await db.InventoryItems.AsNoTracking().OrderBy(item => item.Zone).ThenBy(item => item.Sku).ToListAsync();
+        workOrders = await db.WorkOrders.AsNoTracking().OrderBy(order => order.DueUtc).ToListAsync();
+        pickTasks = await db.PickTasks.AsNoTracking().OrderBy(task => task.ReleasedUtc).ToListAsync();
+    }
+}

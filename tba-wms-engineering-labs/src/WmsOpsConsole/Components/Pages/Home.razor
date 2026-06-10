@@ -1,0 +1,90 @@
+@page "/"
+@using Microsoft.EntityFrameworkCore
+@inject IDbContextFactory<WmsDbContext> DbFactory
+@inject WarehouseKpiCalculator KpiCalculator
+
+<PageTitle>WMS Ops Console</PageTitle>
+
+<h1>WMS Ops Console</h1>
+
+<p class="lead">
+    Blazor operations console for warehouse software workflows: inventory risk,
+    pick execution, service desk load, work-order status, and go-live readiness.
+</p>
+
+@if (snapshot is null)
+{
+    <p>Loading operational snapshot...</p>
+}
+else
+{
+    <div class="kpi-grid">
+        <section class="kpi-card">
+            <span>Total SKUs</span>
+            <strong>@snapshot.TotalSkus</strong>
+            <small>@snapshot.ReorderSkus need reorder review</small>
+        </section>
+        <section class="kpi-card">
+            <span>Pick completion</span>
+            <strong>@snapshot.PickCompletionRate%</strong>
+            <small>@snapshot.PickExceptions exception tasks</small>
+        </section>
+        <section class="kpi-card">
+            <span>Open work orders</span>
+            <strong>@snapshot.OpenWorkOrders</strong>
+            <small>@snapshot.OverdueWorkOrders overdue</small>
+        </section>
+        <section class="kpi-card">
+            <span>Go-live readiness</span>
+            <strong>@snapshot.GoLiveReadinessScore%</strong>
+            <small>@snapshot.AtRiskReadinessItems at-risk item(s)</small>
+        </section>
+    </div>
+
+    <h2>Priority Exceptions</h2>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Signal</th>
+                <th>Next action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in exceptionRows)
+            {
+                <tr>
+                    <td>@row.Area</td>
+                    <td>@row.Signal</td>
+                    <td>@row.NextAction</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WarehouseKpiSnapshot? snapshot;
+    private readonly List<(string Area, string Signal, string NextAction)> exceptionRows = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        await using var db = await DbFactory.CreateDbContextAsync();
+        var inventory = await db.InventoryItems.AsNoTracking().ToListAsync();
+        var orders = await db.WorkOrders.AsNoTracking().ToListAsync();
+        var picks = await db.PickTasks.AsNoTracking().ToListAsync();
+        var tickets = await db.ServiceDeskTickets.AsNoTracking().ToListAsync();
+        var readiness = await db.GoLiveReadinessItems.AsNoTracking().ToListAsync();
+
+        snapshot = KpiCalculator.BuildSnapshot(inventory, orders, picks, tickets, readiness, DateTime.UtcNow);
+        exceptionRows.AddRange(inventory
+            .Where(item => item.Risk is InventoryRisk.Blocked or InventoryRisk.Reorder || item.Available <= item.ReorderPoint)
+            .Select(item => ("Inventory", $"{item.Sku} available={item.Available}, reorder={item.ReorderPoint}", "Review replenishment or release blocked allocation")));
+        exceptionRows.AddRange(tickets
+            .Where(ticket => ticket.Status != ServiceDeskStatus.Resolved && ticket.Priority >= ServiceDeskPriority.High)
+            .Select(ticket => ("Service Desk", $"{ticket.TicketNumber}: {ticket.Summary}", ticket.NextAction)));
+        exceptionRows.AddRange(readiness
+            .Where(item => item.Status == ReadinessStatus.AtRisk)
+            .Select(item => ("Go-Live", $"{item.Area}: {item.Requirement}", $"Escalate with {item.Owner}")));
+    }
+}

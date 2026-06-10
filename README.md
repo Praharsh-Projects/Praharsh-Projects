@@ -1,7 +1,7 @@
 <h1 align="center">Praharsh Pulla</h1>
-<p align="center"><strong>Technical Product Manager | Platform-Minded Engineer</strong></p>
+<p align="center"><strong>Platform-Minded Software Engineer | Operational Data and Logistics Systems</strong></p>
 <p align="center">
-I work on operational data platforms, API-backed decision support, digital twin evaluation, and AI-ready services for weather-sensitive and port operations.
+I work on operational data platforms, API-backed decision support, warehouse and port workflow tools, digital twin evaluation, and AI-ready services for logistics operations.
 </p>
 
 <p align="center">
@@ -20,6 +20,7 @@ I work on operational data platforms, API-backed decision support, digital twin 
 - Translating port operations, emissions, and digitalization problems into platform requirements, data workflows, and demonstrable service capabilities.
 - Building decision-support systems that combine deterministic analytics, API surfaces, traceable evidence, and clear refusal paths when data is insufficient.
 - Documenting service behavior, data limitations, demo flows, and technical tradeoffs for engineering, research, and stakeholder review.
+- Building a WMS-oriented .NET/Blazor portfolio lab with SQL-backed workflows, user stories, service desk playbooks, test plans, and go-live support documentation.
 
 ## Focus Areas
 - Data, API, and geospatial-adjacent platform services.
@@ -30,6 +31,7 @@ I work on operational data platforms, API-backed decision support, digital twin 
 ## Featured Work
 | Work | Repository / Artifact | What It Covers | Stack |
 |---|---|---|---|
+| WMS Ops Console | [tba-wms-engineering-labs](https://github.com/Praharsh-Projects/Praharsh-Projects/tree/codex/tba-wms-engineering-labs/tba-wms-engineering-labs) | Warehouse inventory risk, work orders, pick tasks, service desk triage, go-live readiness, Oracle/Jaspersoft/Pro*C-style integration artifacts, and xUnit-tested business logic. | C#, .NET 8, Blazor, SQLite, SQL, xUnit |
 | Eagle Eye - Maritime Data and Decision-Support Platform | [Eagle_Eye](https://github.com/Praharsh-Projects/Eagle_Eye) | AIS/port-call processing, congestion analytics, emissions estimates, forecast workflows, FastAPI `/ask`, and retrieval-grounded evidence. | Python, FastAPI, Streamlit, RAG, Docker |
 | ZERO-WAIT STS 3D Pitch Simulator | [PEMA](https://github.com/Praharsh-Projects/PEMA) | Visual workflow simulator for berth/crane coordination, look-ahead ranking, handoff, safety modes, and stakeholder demos. | React, Vite, Three.js |
 | SecPurityAI - Security Event Analytics Platform | [SecPurity](https://github.com/Praharsh-Projects/SecPurity) | API-driven ingestion, alerting, CVE context, vector search, graph scoring, and smoke validation for distributed event data. | FastAPI, PostgreSQL, MinIO, Qdrant, Neo4j |
@@ -39,6 +41,8 @@ I work on operational data platforms, API-backed decision support, digital twin 
 ## Tech Stack
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="C Sharp" />
+  <img src="https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />

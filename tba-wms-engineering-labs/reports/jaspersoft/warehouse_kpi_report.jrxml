@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="warehouse_kpi_report"
+              pageWidth="595"
+              pageHeight="842"
+              columnWidth="555"
+              leftMargin="20"
+              rightMargin="20"
+              topMargin="20"
+              bottomMargin="20"
+              uuid="32f6f4d2-3054-4e42-a0f8-0f1147c06e2a">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="Warehouse SQLite Prototype"/>
+    <queryString>
+        <![CDATA[
+        SELECT
+            risk_code,
+            COUNT(*) AS sku_count,
+            SUM(on_hand_qty - allocated_qty) AS available_qty
+        FROM wms_inventory_item
+        GROUP BY risk_code
+        ORDER BY risk_code
+        ]]>
+    </queryString>
+    <field name="risk_code" class="java.lang.String"/>
+    <field name="sku_count" class="java.lang.Integer"/>
+    <field name="available_qty" class="java.lang.Integer"/>
+    <title>
+        <band height="48">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30"/>
+                <text><![CDATA[Warehouse KPI Summary]]></text>
+            </staticText>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="20">
+            <staticText><reportElement x="0" y="0" width="180" height="20"/><text><![CDATA[Risk]]></text></staticText>
+            <staticText><reportElement x="190" y="0" width="160" height="20"/><text><![CDATA[SKU Count]]></text></staticText>
+            <staticText><reportElement x="360" y="0" width="180" height="20"/><text><![CDATA[Available Qty]]></text></staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20">
+            <textField><reportElement x="0" y="0" width="180" height="20"/><textFieldExpression><![CDATA[$F{risk_code}]]></textFieldExpression></textField>
+            <textField><reportElement x="190" y="0" width="160" height="20"/><textFieldExpression><![CDATA[$F{sku_count}]]></textFieldExpression></textField>
+            <textField><reportElement x="360" y="0" width="180" height="20"/><textFieldExpression><![CDATA[$F{available_qty}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport>
