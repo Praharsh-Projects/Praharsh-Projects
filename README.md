@@ -1,7 +1,7 @@
 <h1 align="center">Praharsh Pulla</h1>
-<p align="center"><strong>Simulation + AI Engineer for Port Operations</strong></p>
+<p align="center"><strong>Technical Product Manager | Platform-Minded Engineer</strong></p>
 <p align="center">
-I build digital twin simulations, retrieval-grounded decision support systems, and production-ready engineering workflows.
+I work on operational data platforms, API-backed decision support, digital twin evaluation, and AI-ready services for weather-sensitive and port operations.
 </p>
 
 <p align="center">
@@ -17,24 +17,24 @@ I build digital twin simulations, retrieval-grounded decision support systems, a
 </p>
 
 ## Current Work
-- Designing digital twin simulations for port terminal operations to test throughput, delay, queueing, and disruption scenarios.
-- Building LLM-based decision support with traceable retrieval-augmented generation (LangChain + RAG) for operator-facing recommendations.
-- Containerizing simulation and AI components with Docker/Docker Compose and standardizing CI/CD workflows for repeatable demos and deployments.
+- Translating port operations, emissions, and digitalization problems into platform requirements, data workflows, and demonstrable service capabilities.
+- Building decision-support systems that combine deterministic analytics, API surfaces, traceable evidence, and clear refusal paths when data is insufficient.
+- Documenting service behavior, data limitations, demo flows, and technical tradeoffs for engineering, research, and stakeholder review.
 
 ## Focus Areas
-- Operations simulation and what-if experimentation.
-- Retrieval-grounded AI systems with citations and policy-aligned outputs.
-- Production engineering: observability, documentation, deployment reliability.
+- Data, API, and geospatial-adjacent platform services.
+- Digital twins, operational analytics, and what-if experimentation.
+- Retrieval-grounded AI with provenance, data-quality boundaries, and product-facing documentation.
+- Developer enablement through clean interfaces, Dockerized demos, and repeatable validation workflows.
 
 ## Featured Work
 | Work | Repository / Artifact | What It Covers | Stack |
 |---|---|---|---|
-| SecPurityAI - Cybersecurity Analytics Platform | [SecPurity](https://github.com/Praharsh-Projects/SecPurity) | Multi-store cybersecurity analytics with CVE intelligence, threat-log ingestion, semantic/vector search, and graph scoring. | FastAPI, PostgreSQL, MinIO, Qdrant, Neo4j |
-| Eagle Eye - AI Assistant for Baltic Port Operations | [Eagle_Eye](https://github.com/Praharsh-Projects/Eagle_Eye) | AIS pipeline, congestion analytics, forecasting, and retrieval-grounded assistant for operational queries. | Python, FastAPI, LangChain, FAISS, Docker |
-| Smart Decision Support System for Port Cybersecurity | [SDSS-Port-Management](https://github.com/Praharsh-Projects/SDSS-Port-Management) | Port cybersecurity risk assessment with API + dashboard workflows and AIS-integrated analysis. | Python, Flask, ML, CesiumJS |
-| Intelligent Intrusion Detection System Using Deep Learning | [IDS-PRoject](https://github.com/Praharsh-Projects/IDS-PRoject) | Hybrid intrusion detection using ML/DL models with practical workflow tooling. | Python, SVM, Random Forest, DNN, Tkinter |
-| Dark Web Data Collection Benchmark using DARC | [RM REPORT.pdf](https://github.com/Praharsh-Projects/Researh_papers/blob/main/RM%20REPORT.pdf) | Benchmark study comparing DARC with other crawlers across speed, completeness, anonymity, and resilience. | Cybersecurity Research, Benchmarking |
-| Maintainability Analysis of Apache RocketMQ using GQM | [SM_PROJECT (2).pdf](https://github.com/Praharsh-Projects/Researh_papers/blob/main/SM_PROJECT%20(2).pdf) | Maintainability analysis across RocketMQ versions using Goal-Question-Metric and OO metrics. | Software Metrics, GQM, Code Analysis |
+| Eagle Eye - Maritime Data and Decision-Support Platform | [Eagle_Eye](https://github.com/Praharsh-Projects/Eagle_Eye) | AIS/port-call processing, congestion analytics, emissions estimates, forecast workflows, FastAPI `/ask`, and retrieval-grounded evidence. | Python, FastAPI, Streamlit, RAG, Docker |
+| ZERO-WAIT STS 3D Pitch Simulator | [PEMA](https://github.com/Praharsh-Projects/PEMA) | Visual workflow simulator for berth/crane coordination, look-ahead ranking, handoff, safety modes, and stakeholder demos. | React, Vite, Three.js |
+| SecPurityAI - Security Event Analytics Platform | [SecPurity](https://github.com/Praharsh-Projects/SecPurity) | API-driven ingestion, alerting, CVE context, vector search, graph scoring, and smoke validation for distributed event data. | FastAPI, PostgreSQL, MinIO, Qdrant, Neo4j |
+| Smart Decision Support System for Port Cybersecurity | [SDSS-Port-Management](https://github.com/Praharsh-Projects/SDSS-Port-Management) | Port cybersecurity risk assessment with API, dashboard workflows, and AIS-integrated context. | Python, Flask, ML, CesiumJS |
+| Research Papers | [Researh_papers](https://github.com/Praharsh-Projects/Researh_papers) | Accepted and academic work on maritime intelligence, digital twins, energy twins, and software metrics. | Research, Technical Writing |
 
 ## Tech Stack
 <p>
@@ -62,4 +62,4 @@ I build digital twin simulations, retrieval-grounded decision support systems, a
 </p>
 
 ## Collaboration
-I am open to collaboration on simulation-driven analytics, operational AI, and production-hardening projects.
+I am open to collaboration on platform product work, operational data services, digital twin evaluation, and AI-ready decision-support systems.
