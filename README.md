@@ -1,7 +1,7 @@
 <h1 align="center">Praharsh Pulla</h1>
-<p align="center"><strong>Applied AI & Innovation Engineering</strong></p>
+<p align="center"><strong>Software Engineering | Applied AI</strong></p>
 <p align="center">
-MSc Computer Science candidate in Sweden building AI decision-support systems, simulation demos, and research-backed technical artifacts for operational domains.
+MSc Computer Science candidate in Sweden building tested applications, APIs, workflow tools, and evidence-grounded AI systems with C#/.NET, TypeScript/React, Java/Spring Boot, and Python.
 </p>
 
 <p align="center">
@@ -16,39 +16,40 @@ MSc Computer Science candidate in Sweden building AI decision-support systems, s
   </a>
 </p>
 
-## Current Work
-- Building retrieval-grounded and deterministic AI decision-support workflows with traceable evidence, bounded analytics, and reproducible outputs.
-- Supporting digitalization and decarbonization research through digital-twin and energy-twin pilot evaluation, structured documentation, and stakeholder-facing materials.
-- Creating demo-ready simulation and visualization tools for innovation challenges, workshops, and technical storytelling.
+## Recruiter Quick View
 
-## Focus Areas
-- Applied AI, RAG, and trustworthy decision support.
-- Innovation research briefs, demos, and workshop-ready prototypes.
-- Simulation, digital twins, operational analytics, and evidence-based technical communication.
-- Practical engineering with Python, FastAPI, React, Three.js, Docker, PostgreSQL, vector search, and graph-backed analysis.
+- Full-stack engineering across C#/.NET 8, TypeScript/React, Java/Spring Boot, Python/FastAPI, REST APIs, and relational data.
+- Repeatable quality gates with xUnit, Vitest, Playwright, strict type checks, dependency audits, and GitHub Actions.
+- Workflow and platform interests spanning reusable Web Components, process-definition validation, multi-tenant services, and AI-assisted development with explicit review and test gates.
+- Current MSc studies in Computer Science at Blekinge Institute of Technology, expected September 2026.
 
-## Featured Work
-| Work | Repository / Artifact | What It Covers | Stack |
-|---|---|---|---|
-| Eagle Eye - Traceable AI Assistant for Port Operations | [Eagle_Eye](https://github.com/Praharsh-Projects/Eagle_Eye) | Deterministic analytics, forecasting, carbon evidence, retrieval-grounded answers, and explainable evidence paths over AIS and port-call data. | Python, FastAPI, Streamlit, RAG, Docker |
-| PEMA - ZERO-WAIT STS 3D Pitch Simulator | [PEMA](https://github.com/Praharsh-Projects/PEMA) | React/Vite + Three.js simulator for demonstrating sequencing, resequencing, safety modes, and innovation-storytelling around terminal operations. | React, Vite, Three.js, TypeScript/JavaScript |
-| TrustFed-Diabetes - Trust-Aware Federated Learning | [TrustFed-Diabetes](https://github.com/Praharsh-Projects/TrustFed-Diabetes) | Run-only handover package and dashboard for decentralized model evaluation, bundled results, and reproducible review without retraining. | Python, federated learning, dashboarding, Docker |
-| SecPurityAI - Security Event and Vulnerability Analytics | [SecPurity](https://github.com/Praharsh-Projects/SecPurity) | Multi-store cybersecurity analytics with event ingestion, CVE context, alerting, vector similarity search, graph scoring, and audit-oriented workflows. | FastAPI, PostgreSQL, MinIO, Qdrant, Neo4j |
-| Research Papers | [Researh_papers](https://github.com/Praharsh-Projects/Researh_papers) | Conference and academic writing on explainable maritime intelligence, digital twins, energy twins, software metrics, and security research. | Research writing, evaluation design |
+## Selected Engineering Work
 
-## Tech Stack
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white" alt="Three.js" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-  <img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white" alt="Neo4j" />
-</p>
+| Project | What it demonstrates | Stack and evidence |
+|---|---|---|
+| [Fire System Event Monitor](https://github.com/Praharsh-Projects/fire-system-event-monitor) | Multi-tenant incident state, authenticated tenant resolution, API/UI workflow, and explicit evidence boundaries | C#, .NET 8, ASP.NET Core, EF Core, React, TypeScript, xUnit, Playwright, CI |
+| [Checkout Elements Web Components](https://github.com/Praharsh-Projects/checkout-elements-web-components) | Reusable framework-neutral UI, runtime contracts, async state, accessibility checks, and browser regression | TypeScript, React, Redux Toolkit, Web Components, Storybook, Vitest, Playwright, CI |
+| [Process Definition Quality Gate](https://github.com/Praharsh-Projects/process-definition-quality-gate) | Validation, path simulation, and generated review artifacts for versioned process definitions | TypeScript, Node.js, Zod, Vitest, Docker, CI |
+| [Investment Operations Workbench](https://github.com/Praharsh-Projects/investment-operations-workbench) | Relational workflow state, versioned updates, and internal operations UI | Java, Spring Boot, Vue, SQL, automated tests, CI |
+| [Paperly AI](https://github.com/Praharsh-Projects/Paperly-AI) | Bounded agent orchestration, prompt contracts, streaming, deterministic evaluation, and privacy-aware traces | Next.js, React, TypeScript, LangGraph, Vitest, Playwright, CI |
+| [Eagle Eye](https://github.com/Praharsh-Projects/Eagle_Eye) | Source-grounded maritime decision support with deterministic analytics and visible evidence paths | Python, FastAPI, Streamlit, RAG, Docker |
+
+## Evidence You Can Inspect
+
+The selected repositories keep implementation, tests, CI workflows, architecture notes, sample outputs, and limitations close to the code. Repository checks support only the behavior described in each project; they do not imply production customers, live deployments, or enterprise scale.
+
+## Core Technologies
+
+**Languages:** C#, TypeScript, Java, Python, JavaScript, SQL<br>
+**Application development:** .NET 8, ASP.NET Core, React, Next.js, Spring Boot, FastAPI, REST APIs<br>
+**Quality and delivery:** xUnit, Vitest, Playwright, Storybook, GitHub Actions, Docker, Terraform<br>
+**Data:** Entity Framework Core, Microsoft SQL Server, PostgreSQL, SQLite<br>
+**Applied AI:** LangGraph workflows, retrieval-grounded answers, deterministic evaluations, prompt contracts, traceable outputs
+
+## Research and Simulation
+
+I also support digital-twin and energy-twin evaluation for port operations and build simulation artifacts that make assumptions, scenarios, and evidence limits reviewable. Research publications and accepted papers are collected in [Researh_papers](https://github.com/Praharsh-Projects/Researh_papers).
 
 ## Collaboration
-I am open to applied AI, innovation, simulation, and research-engineering work where prototypes need to become clear, testable, and explainable.
+
+I am interested in early-career software engineering work where applications and developer tools need clear contracts, short feedback cycles, automated verification, and maintainable documentation.
